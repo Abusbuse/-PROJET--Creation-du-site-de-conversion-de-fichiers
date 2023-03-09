@@ -24,18 +24,6 @@ def convertFileDocxToPdf(filename):
         #Affiche un message de confirmation
         lbl = Label(win2, text="Fichier converti avec succès !", font=("Arial", 20), bg='#FFFFFF', fg='#000000')
         lbl.pack(pady=20)   
-
-#Fonction qui prend le fichier odt et le convertit en pdf
-def convertFileOdtToPdf(filename):
-    if filename == "":
-        print("Aucun fichier sélectionné")
-    else:
-        #télécharge le fichier converti dans le dossier de téléchargement du pc de l'utilisateur
-        convert(filename, os.path.expanduser("~/Downloads/"))
-
-        #Affiche un message de confirmation
-        lbl = Label(win2, text="Fichier converti avec succès !", font=("Arial", 20), bg='#FFFFFF', fg='#000000')
-        lbl.pack(pady=20)
         
 ##################################################################################################################################
 
@@ -69,29 +57,6 @@ def windowDocxToPdf():
     btnQuit.pack(pady=20)
     
     win2.mainloop()
-
-
-def windowOdtToPdf():
-    
-    #création de la fenêtre secondaire qui va permettre de convertir le fichier docx en pdf
-    global win3
-    win3 = Toplevel(windowMain)
-    win3.title("Convertir un fichier odt en pdf")
-    win3.geometry("500x500")
-    win3.config(background='#FFFFFF')
-    
-    lbl = Label(win3, text="Convertit vos fichiers odt en pdf", font=("Arial", 20), bg='#B1B1B1', fg='#000000')
-    lbl.pack(pady=20)
-    
-    #bouton pour ouvrir convertir le fichier
-    btnConvert = Button(win3, text="Convertir", command= lambda: convertFileDocxToPdf(openFile()))
-    btnConvert.pack(pady=20)
-    
-    #Bouton pour quitter la fenêtre 
-    btnQuit = Button(win3, text="Quitter", command= win3.destroy)
-    btnQuit.pack(pady=20)
-    
-    win3.mainloop()
     
 ##################################################################################################################################
         
@@ -131,7 +96,6 @@ def windowAccueil():
 
     #boutons présents dans le menu fichier
     fileMenu.add_command(label="Docx en pdf", command=windowDocxToPdf)
-    fileMenu.add_command(label="Odt en pdf", command=windowOdtToPdf)
     
     #Configuration du menu
     fileMenu.config(bg='#FFFFFF', fg=fontColor, activebackground='#5F9EA0', activeforeground='#000000')
