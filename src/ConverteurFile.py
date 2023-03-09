@@ -1,30 +1,14 @@
-from docx2pdf import convert
 from tkinter import  filedialog
 from tkinter import *
-import tkinter as tk
-import os
-from mp4tomp3 import mp4tomp3
+
+from docxToPdf import convertFileDocxToPdf
+from mp4tomp3 import ConvertMp4ToMp3
 
 #################################################################################################################################
 
 #Attributs
-filename = "" 
+filename = ""
 windowMain = None
-    
-##################################################################################################################################
-
-#fonction qui prend le fichier docx et le convertit en pdf
-def convertFileDocxToPdf(filename):
-    #si l'utilisateur annule l'opération
-    if filename == "":
-        print("Aucun fichier sélectionné")
-    else:
-        #télécharge le fichier converti dans le dossier de téléchargement du pc de l'utilisateur
-        convert(filename, os.path.expanduser("~/Downloads/"))
-
-        #Affiche un message de confirmation
-        lbl = Label(win2, text="Fichier converti avec succès !", font=("Arial", 20), bg='#FFFFFF', fg='#000000')
-        lbl.pack(pady=20)   
         
 ##################################################################################################################################
 
@@ -44,7 +28,7 @@ def windowDocxToPdf():
     win2 = Toplevel(windowMain)
     win2.title("Convertir un fichier docx en pdf")
     win2.geometry("500x500")
-    win2.config(background='#FFFFFF')
+    win2.config(background='#B1B1B1')
     
     lbl = Label(win2, text="Convertit vos fichiers docx en pdf", font=("Arial", 20), bg='#B1B1B1', fg='#000000')
     lbl.pack(pady=20)
@@ -62,17 +46,17 @@ def windowDocxToPdf():
 def windowMp4ToMp3():
     
     #création de la fenêtre secondaire qui va permettre de convertir le fichier docx en pdf
-    global win2
+    global win3
     win2 = Toplevel(windowMain)
     win2.title("Convertir un fichier mp4 en mp3")
     win2.geometry("500x500")
-    win2.config(background='#FFFFFF')
+    win2.config(background='#B1B1B1')
     
     lbl = Label(win2, text="Convertit vos fichiers mp4 en mp3", font=("Arial", 20), bg='#B1B1B1', fg='#000000')
     lbl.pack(pady=20)
     
     #bouton pour ouvrir convertir le fichier
-    btnConvert = Button(win2, text="Convertir", command= lambda: mp4tomp3(openFile()))
+    btnConvert = Button(win2, text="Convertir", command= lambda: ConvertMp4ToMp3(openFile()))
     btnConvert.pack(pady=20)
     
     #Bouton pour quitter la fenêtre 
@@ -87,7 +71,7 @@ def windowMp4ToMp3():
 def windowAccueil():
     
     #Attributs
-    fontTitle = ("Arial", 20)
+    fontTitle = ("Arial", 20, "bold")
     fontContent = ("Arial", 14)
     fontBg = "#B1B1B1"
     fontColor = "#000000"
@@ -114,7 +98,7 @@ def windowAccueil():
     
     #Menu fichier
     fileMenu = Menu(menu, tearoff=0)
-    menu.add_cascade(label="Types de conversion", menu=fileMenu)
+    menu.add_cascade(label="Types de conversion \/", menu=fileMenu)
     menu.add_command(label="Quitter", command=windowMain.destroy)
 
     #boutons présents dans le menu fichier
@@ -125,20 +109,20 @@ def windowAccueil():
     fileMenu.config(bg='#FFFFFF', fg=fontColor, activebackground='#5F9EA0', activeforeground='#000000')
     menu.config(bg='#FFFFFF', fg=fontColor, activebackground='#5F9EA0', activeforeground='#000000')
     
-    #titre de la fenêtre
-    TitreMain = Label(windowMain, text="Application qui convertit vos fichiers", font= fontTitle, bg=fontBg, fg=fontColor)
+    #titre de la fenêtre en gras
+    TitreMain = Label(windowMain, text="Application qui convertit vos fichiers", font=fontTitle, bg=fontBg, fg=fontColor)
     #Encadrement du titre
     TitreMain.config(padx=20, pady=20)
     TitreMain.pack(pady=20)
     
     #Contenu de la fenêtre principale
-    lbl = Label(windowMain, text="Bienvenue sur notre nouvelle application", font=fontContent, bg=fontBg, fg=fontColor)
+    lbl = Label(windowMain, text="Bienvenue sur notre nouvelle application.", font=fontContent, bg=fontBg, fg=fontColor)
     
     #Expliquer ce que fait l'application
-    lbl2 = Label(windowMain, text="Cette application vous permet de convertir vos fichiers en plusieurs types", font=fontContent, bg=fontBg, fg=fontColor)
+    lbl2 = Label(windowMain, text="Cette application vous permet de convertir vos fichiers en plusieurs types.", font=fontContent, bg=fontBg, fg=fontColor)
     
     #Expliquer comment l'utiliser
-    lbl3 = Label(windowMain, text="Pour commencer, cliquez sur le menu en haut de la page", font=fontContent, bg=fontBg, fg=fontColor)
+    lbl3 = Label(windowMain, text="Pour commencer, cliquez sur le menu en haut de la page.", font=fontContent, bg=fontBg, fg=fontColor)
     
     #Faire en sorte que les labels aillent à la ligne si le texte est trop long
     lbl.config(wraplength=400)
