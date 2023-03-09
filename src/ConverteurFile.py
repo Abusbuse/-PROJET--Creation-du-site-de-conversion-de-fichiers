@@ -3,6 +3,7 @@ from tkinter import  filedialog
 from tkinter import *
 import tkinter as tk
 import os
+from mp4tomp3 import mp4tomp3
 
 #################################################################################################################################
 
@@ -31,7 +32,7 @@ def convertFileDocxToPdf(filename):
 def openFile():
     global filename
     #ouvre l'explorateur de fichier
-    filename = filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("Word files","*.docx", "*.odt"),("all files","*.*")))
+    filename = filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("all files","*.*"),("Word files","*.docx"),("Video files" ,"*.mp4")))
     return filename
         
 ##################################################################################################################################
@@ -50,6 +51,28 @@ def windowDocxToPdf():
     
     #bouton pour ouvrir convertir le fichier
     btnConvert = Button(win2, text="Convertir", command= lambda: convertFileDocxToPdf(openFile()))
+    btnConvert.pack(pady=20)
+    
+    #Bouton pour quitter la fenêtre 
+    btnQuit = Button(win2, text="Quitter", command= win2.destroy)
+    btnQuit.pack(pady=20)
+    
+    win2.mainloop()
+    
+def windowMp4ToMp3():
+    
+    #création de la fenêtre secondaire qui va permettre de convertir le fichier docx en pdf
+    global win2
+    win2 = Toplevel(windowMain)
+    win2.title("Convertir un fichier mp4 en mp3")
+    win2.geometry("500x500")
+    win2.config(background='#FFFFFF')
+    
+    lbl = Label(win2, text="Convertit vos fichiers mp4 en mp3", font=("Arial", 20), bg='#B1B1B1', fg='#000000')
+    lbl.pack(pady=20)
+    
+    #bouton pour ouvrir convertir le fichier
+    btnConvert = Button(win2, text="Convertir", command= lambda: mp4tomp3(openFile()))
     btnConvert.pack(pady=20)
     
     #Bouton pour quitter la fenêtre 
@@ -96,6 +119,7 @@ def windowAccueil():
 
     #boutons présents dans le menu fichier
     fileMenu.add_command(label="Docx en pdf", command=windowDocxToPdf)
+    fileMenu.add_command(label="Mp4 en mp3", command=windowMp4ToMp3)
     
     #Configuration du menu
     fileMenu.config(bg='#FFFFFF', fg=fontColor, activebackground='#5F9EA0', activeforeground='#000000')
