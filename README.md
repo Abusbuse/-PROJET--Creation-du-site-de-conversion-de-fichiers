@@ -4,8 +4,8 @@ Name: ConvertisseurFile
 Version: 1.0.0
 Description: Convertisseur de fichier
 
-# "PROJET" Creation du site de conversion de fichiers
- Ce projet aura pour but de créer un site internet permettant aux utilisateurs de convertir leurs fichiers. Ce projet est réalisé dans le cadre de notre formation de BUT Informatique et encadre notre période de stage de 2 mois.
+# "PROJET" Creation d'une application de conversion de fichiers
+ Ce projet aura pour but de créer une application et de faire site internet permettant aux utilisateurs télécharger l'aaplication et donc de convertir leurs fichiers. Ce projet est réalisé dans le cadre de notre formation de BUT Informatique et encadre notre période de stage de 2 mois.
 
 
 ## "FONCTIONNALITES"
@@ -25,8 +25,11 @@ L'utilisateur peut télécharger son fichier converti.
 
 ## "CONCEPTION"
 
+### "CONCEPTION 0"
+L'application sera réalisé en Python.
+
 ### "CONCEPTION 1"
-Le site internet sera réalisé en HTML, CSS et JavaScript ou en python.
+Le site internet sera réalisé en HTML, CSS et JavaScript.
 
 ### "CONCEPTION 2"
 Le site internet sera hébergé sur un serveur ovh (maybe).

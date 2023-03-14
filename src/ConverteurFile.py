@@ -2,7 +2,8 @@ from tkinter import  filedialog
 from tkinter import *
 
 from docxToPdf import convertFileDocxToPdf
-from mp4tomp3 import ConvertMp4ToMp3
+from mp4Tomp3 import ConvertMp4ToMp3
+from htmlToPdf import convertFileHtmlToPdf
 
 #################################################################################################################################
 
@@ -64,6 +65,29 @@ def windowMp4ToMp3():
     btnQuit.pack(pady=20)
     
     win2.mainloop()
+
+
+def windowHtmlToPdf():
+        
+    #création de la fenêtre secondaire qui va permettre de convertir le fichier docx en pdf
+    global win4
+    win4 = Toplevel(windowMain)
+    win4.title("Convertir un fichier html en pdf")
+    win4.geometry("500x500")
+    win4.config(background='#B1B1B1')
+    
+    lbl = Label(win4, text="Convertit vos fichiers html en pdf", font=("Arial", 20), bg='#B1B1B1', fg='#000000')
+    lbl.pack(pady=20)
+    
+    #bouton pour ouvrir convertir le fichier
+    btnConvert = Button(win4, text="Convertir", command= lambda: convertFileHtmlToPdf())
+    btnConvert.pack(pady=20)
+    
+    #Bouton pour quitter la fenêtre 
+    btnQuit = Button(win4, text="Quitter", command= win4.destroy)
+    btnQuit.pack(pady=20)
+    
+    win4.mainloop()
     
 ##################################################################################################################################
         
@@ -104,6 +128,7 @@ def windowAccueil():
     #boutons présents dans le menu fichier
     fileMenu.add_command(label="Docx en pdf", command=windowDocxToPdf)
     fileMenu.add_command(label="Mp4 en mp3", command=windowMp4ToMp3)
+    fileMenu.add_command(label="Html en pdf", command=windowHtmlToPdf)
     
     #Configuration du menu
     fileMenu.config(bg='#FFFFFF', fg=fontColor, activebackground='#5F9EA0', activeforeground='#000000')
