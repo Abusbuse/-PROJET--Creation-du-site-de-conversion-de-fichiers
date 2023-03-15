@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Accueil</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Accueil</h1>
+            <!--Aller a la page suivante en utilisant django-->
+            <a href="{% url 'htp' %}">Html vers pdf</a>
+            <a href="{% url 'dtp' %}">Docx vers pdf</a>
+            <a href="{% url 'm4tm3' %}">MP4 vers MP3</a>
+        </header>
+
+        <div class="content">
+            <p>Voici le contenu de la page d'accueil</p>
+        </div>
+
+        <footer>
+            <p>Voici le pied de page</p>
+        </footer>
+    </body>
