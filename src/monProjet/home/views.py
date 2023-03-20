@@ -16,3 +16,6 @@ def dtp(request):
 
 def m4tm3(request):
     return render(request, 'home/m4tm3.html')
+
+def dragAndDrop(request):
+    return render(request, 'home/dragAndDrop.html')

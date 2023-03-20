@@ -1,4 +1,5 @@
 'use strict';
+var fichierDrop;
 
 ;( function ( document, window, index )
 {
@@ -80,7 +81,7 @@
             {
                 droppedFiles = e.dataTransfer.files; // the files that were dropped
                 showFiles( droppedFiles );
-
+                fichierDrop=droppedFiles;
                 
                 triggerFormSubmit();
 
@@ -179,3 +180,6 @@
     });
 }( document, window, 0 ));
 
+function getFichierDrop(){
+    return fichierDrop;
+}
