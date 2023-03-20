@@ -5,6 +5,9 @@ from django.http import HttpResponse
 def Accueil(request):
     return render (request, 'home/Accueil.html')
 
+def convert(request):
+    return render(request, 'home/convert.html')
+
 def htp(request):
     return render(request, 'home/htp.html')
 

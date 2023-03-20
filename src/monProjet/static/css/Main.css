@@ -1,0 +1,47 @@
+:root {
+    --header-Background: #252525;
+}
+
+body{
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.header{
+    background-color: var(--header-Background);
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+}
+
+#nameDomaine {
+    color: white;
+
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.content{
+    color: red;
+
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-top: 250px;
+}
+
+.footer{
+    background-color: var(--header-Background);
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    bottom: 0;
+}

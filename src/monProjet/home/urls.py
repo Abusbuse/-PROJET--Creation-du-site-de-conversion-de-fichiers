@@ -9,6 +9,9 @@ urlpatterns = [
     #Chemin vers la page d'accueil
     path('', views.Accueil, name='Accueil'),
     
+    #Chemin vers la page de centralisation des conversions
+    path('convert/', views.convert, name='convert'),
+    
     #Chemin vers les pages de conversion 
     path('htp/', views.htp, name='htp'),
     path('dtp/', views.dtp, name='dtp'),
