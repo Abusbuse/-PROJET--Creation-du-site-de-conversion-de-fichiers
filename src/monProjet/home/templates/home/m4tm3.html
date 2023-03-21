@@ -1,25 +1,29 @@
+{%load static%}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{%static 'css/Main.css'%}">
+        <link rel="shortcut icon" href="{%static 'image/logo.png'%}" type="image/x-icon">
         <title>MP4 To MP3</title>
     </head>
-
     <body>
         <header>
             <h1>MP4 To MP3</h1>
             <a href={% url 'Accueil' %}>Accueil</a>        
         </header>
 
-        <form action="/convertMp4ToMp3">
-            <button id="stat-btn" class="btn"> convert </button>
-        </form>
+        <main>
+            <form action="/convertMp4ToMp3">
+                <button id="stat-btn" class="btn"> convert </button>
+            </form>
+        </main>
 
         <footer>
             <p>Footer</p>
         </footer>
-        
     </body>
 </html>

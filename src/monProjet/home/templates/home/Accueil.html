@@ -1,36 +1,38 @@
-{% load static %}
+{%load static%}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'css/Main.css' %}">
+        <link rel="stylesheet" href="{%static 'css/Main.css'%}">
+        <link rel="shortcut icon" href="{%static 'image/logo.png'%}" type="image/x-icon">
         <title>Accueil</title>
-        <link rel="shortcut icon" href="{% static 'image/logo.png'%}" type="image/x-icon">
     </head>
-
     <body>
-        <div class="header">
+        <header>
             <img src="{% static 'image/logo.png'%}" alt="logo" width="100" height="100">
             <h1 id="nameDomaine">ConvertisseurFile</h1>     
     
             <div class="menu">
-                <ul>
-                    <li><a href="{% url 'Accueil' %}">Accueil</a></li>
-                    <li><a href="{% url 'convert' %}">Convertir</a></li>
-                </ul>
+                <a href="{% url 'Accueil' %}"><span id="upper">Accueil</span></a>
+                <a href="{% url 'convert' %}"><span id="upper">Convertir</span></a>
             </div>
-        </div>
+        </header>
 
-        <div class="content">
+        <main>
             <h1>Accueil</h1>
-            <p>Voici le contenu de la page d'accueil</p>
-        </div>
+            <p>Bienvenue sur le site de conversion de fichier</p>
+            <p>Ce site représente un projet encadrant un stage de 2ème année du BUT Informatique à l'Université de Lorraine pendant 2 mois.</p>
+            <p>Le but de ce site est de permettre à l'utilisateur de convertir un fichier de plusieurs types en unte autre extension.</p>
+            <p>Vous pouvez accéder à la page  répertoriant les différents types de fichiers que vous pouvez convertir en cliquant sur le lien ci-dessous.</p>
+            <a id="lien" href="{% url 'convert' %}"> → <span id="underL">CONVERTIR</span></a>
+            <p>Le site est actuellement en version beta, il est donc possible que certaines fonctionnalités ne soient pas encore disponibles.</p>
+        </main>
 
-        <div class ="footer">
+        <footer>
             <p>Voici le pied de page</p>
-        </div>
+        </footer>
     </body>
 </html>

@@ -1,14 +1,20 @@
 :root {
-    --header-Background: #252525;
+    --header-Background: #151515;
+}
+
+html {
+    margin: 0;
+    padding: 0;
 }
 
 body{
     min-width: 100%;
     min-height: 100%;
     margin: 0;
+    padding: 0;
 }
 
-.header{
+header{
     background-color: var(--header-Background);
     width: 100%;
 
@@ -24,18 +30,94 @@ body{
 
     margin-left: 50px;
     margin-right: 50px;
+
+    font-weight: 700;
+    text-align: center;
+    font-size: 40px;
+    font-family: Hack, sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #e6b24b, #ffffff, #e6b24b);
+    letter-spacing: 4px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: repeat;
+    background-size: 80%;
+    animation: shine 5s linear infinite;
+    position: relative;
 }
 
-.content{
-    color: red;
+@keyframes shine {
+    0% {
+        background-position-x: -500%;
+    }
+    100% {
+    background-position-x: 500%;
+    }
+}
 
+#upper{
+    text-decoration: none;
+    color: white;
+    margin-right: 25px;
+    font-size: 17px;
+}
+#upper:hover {
+    font-size: 20px;
+}
+
+main{
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 50px;
-    margin-top: 250px;
+    margin-top: 125px;
+    min-height: 69.2vh;
+
+    font-size: larger;
 }
 
-.footer{
+main h1{
+    color: black;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+main h2{
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+main p{
+    color: black;
+}
+
+main a {
+    color: black;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+#underL {
+    text-decoration: none;
+    position: relative;
+}
+#underL::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -2px;
+    background-color: black;
+    transition: width 0.3s ease-in-out;
+}
+#underL:hover::before {
+    width: 100%;
+}
+
+footer{
     background-color: var(--header-Background);
     width: 100%;
 
@@ -43,7 +125,6 @@ body{
     justify-content: space-between;
     align-items: center;
 
-    position: fixed;
     bottom: 0;
 
     color: white;

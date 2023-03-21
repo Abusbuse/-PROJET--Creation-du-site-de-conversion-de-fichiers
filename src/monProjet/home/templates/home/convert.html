@@ -1,37 +1,31 @@
-{% load static %}
+{%load static%}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'css/Main.css' %}">
-        
+        <link rel="stylesheet" href="{%static 'css/Main.css'%}">
+        <link rel="shortcut icon" href="{%static 'image/logo.png'%}" type="image/x-icon">
         <title>Conversion</title>
-        <link rel="shortcut icon" href="{% static 'image/logo.png'%}" type="image/x-icon">
     </head>
-
     <body>
-        <div class="header">
+        <header>
             <img src="{% static 'image/logo.png'%}" alt="logo" width="100" height="100">
             <h1 id="nameDomaine">ConvertisseurFile</h1>
-            
-            <a href="{% url 'Accueil' %}">Accueil</a>
-        </div>
+            <a id="lien" href="{% url 'Accueil' %}"><span id="underL">Accueil</span></a>
+        </header>
 
-        <div class="content">
-            <h1>Voici la page où vous pouvez retrouver tous les types de conversions disponibles: </h1>
-            <!--Aller a la page suivante en utilisant django-->
-            <a href="{% url 'htp' %}">Html vers pdf</a>
+        <main>
+            <h2>Voici la page où vous pouvez retrouver tous les types de conversions disponibles: </h2>
+            <a id="lien" href="{% url 'htp' %}"><span id="underL">Html → pdf</span></a>
+            <a id="lien" href="{% url 'dtp' %}"><span id="underL">Docx → pdf</span></a>
+            <a id="lien" href="{% url 'm4tm3' %}"><span id="underL">MP4 → MP3</span></a>
+        </main>
 
-            <a href="{% url 'dtp' %}">Docx vers pdf</a>
-
-            <a href="{% url 'm4tm3' %}">MP4 vers MP3</a>
-        </div>
-
-        <div class ="footer">
+        <footer>
             <p>Voici le pied de page</p>
-        </div>
+        </footer>
     </body>
 </html>
