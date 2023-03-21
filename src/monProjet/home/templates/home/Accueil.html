@@ -18,6 +18,8 @@
             <div class="menu">
                 <a href="{% url 'Accueil' %}"><span id="upper">Accueil</span></a>
                 <a href="{% url 'convert' %}"><span id="upper">Convertir</span></a>
+                <a href="{% url 'contact' %}"><span id="upper">A propos</span></a>
+                <a href="{% url 'aPropos' %}"><span id="upper">Contact</span></a>
             </div>
         </header>
 
@@ -32,7 +34,12 @@
         </main>
 
         <footer>
-            <p>Voici le pied de page</p>
+            <ul>
+                <li id="liItem"><a id="footitem" href="{%static 'Accueil'%}">Accueil</a>
+                <li id="liItem"><a id="footitem" href="{%static 'contact'%}">Contact</a>
+                <li id="liItem"><a id="footitem" href="{%static 'aPropos'%}">A propos</a>
+            </ul>
+            <p>© 2023 ConvertisseurFile</p>
         </footer>
     </body>
 </html>

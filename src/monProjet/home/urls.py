@@ -12,6 +12,11 @@ urlpatterns = [
     #Chemin vers la page de centralisation des conversions
     path('convert/', views.convert, name='convert'),
     
+    #Cehmin vers les autres pages
+    path('contact/', views.contact, name='contact'),
+    path('aPropos/', views.aPropos, name='aPropos'),
+
+    
     #Chemin vers les pages de conversion 
     path('htp/', views.htp, name='htp'),
     path('dtp/', views.dtp, name='dtp'),

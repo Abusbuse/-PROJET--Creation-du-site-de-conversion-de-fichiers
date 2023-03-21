@@ -52,12 +52,16 @@ header{
         background-position-x: -500%;
     }
     100% {
-    background-position-x: 500%;
+        background-position-x: 500%;
     }
 }
 
-#upper{
+header a{
     text-decoration: none;
+    margin-left: 90px;
+}
+
+#upper{
     color: white;
     margin-right: 25px;
     font-size: 17px;
@@ -100,6 +104,10 @@ main a {
     font-weight: bold;
     margin-right: 20px;
 }
+#lien{
+    margin-left: 200px;
+    margin-right: 100px;
+}
 #underL {
     text-decoration: none;
     position: relative;
@@ -128,4 +136,20 @@ footer{
     bottom: 0;
 
     color: white;
+}
+
+#liItem{
+    list-style-type: none;
+    margin-left: 675px;
+    padding-top: 10px;
+}
+
+#footitem{
+    text-decoration: none;
+}
+
+footer p{
+    text-align: left;
+    margin-top: 200px;
+    margin-right: 700px;
 }

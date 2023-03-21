@@ -8,6 +8,12 @@ def Accueil(request):
 def convert(request):
     return render(request, 'home/convert.html')
 
+def contact(request):
+    return render(request, 'home/contact.html')
+
+def aPropos(request):
+    return render(request, 'home/aPropos.html')
+
 def htp(request):
     return render(request, 'home/htp.html')
 
