@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{%static 'css/Main.css'%}">
         <link rel="shortcut icon" href="{%static 'image/logo.png'%}" type="image/x-icon">
-        <title>HTML To PDF</title>
+        <title>DOCX To PDF</title>
     </head>
     <body>
         <header>
@@ -20,17 +20,17 @@
                 <a href="{% url 'convert' %}"><span id="upper">Convertir</span></a>
                 <a href="{% url 'contact' %}"><span id="upper">A propos</span></a>
                 <a href="{% url 'aPropos' %}"><span id="upper">Contact</span></a>
-            </div>        
+            </div>       
         </header>
 
         <main>
-            <form action="/convertFileHtmlToPdf">
-                <button id="stat-btn" class="btn"> convert </button>
+            <form action="/convertFileMdToHtml">
+                <button id="stat-btn" class="btn"> convert MD to Html</button>
             </form>
         </main>
 
         <footer>
             <p>Footer</p>
-        </footer>
+        </footer>   
     </body>
 </html>

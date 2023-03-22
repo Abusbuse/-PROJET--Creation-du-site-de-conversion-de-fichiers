@@ -23,5 +23,11 @@ def dtp(request):
 def m4tm3(request):
     return render(request, 'home/m4tm3.html')
 
+def mdToPdf(request):
+    return render(request, 'home/mdToPdf.html')
+
+def mdToHtml(request):
+    return render(request, 'home/mdToHtml.html')
+
 def dragAndDrop(request):
     return render(request, 'home/dragAndDrop.html')
