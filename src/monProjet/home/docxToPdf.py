@@ -5,7 +5,7 @@ from docx2pdf import convert
 
 #fonction qui prend le fichier docx et le convertit en pdf
 def convertFileDocxToPdf(request):
-    filename = filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("all files","*.*"),("Docx files" ,"*.docx")))
+    filename = filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("Docx files" ,"*.docx"),("all files","*.*")))
     
     #Récupère la taille du fichier
     sizeFile= os.path.getsize(filename)
@@ -21,4 +21,4 @@ def convertFileDocxToPdf(request):
         
         print("Fichier converti avec succès !")
         
-    return HttpResponse("""<html> <script> window.location.replace('/');</script> </html>""")
+    return HttpResponse("""<html> <script> window.location.replace('/convert/');</script> </html>""")

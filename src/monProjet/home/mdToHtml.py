@@ -6,7 +6,7 @@ from tkinter import  filedialog
 
 
 def convertFileMdToHtml(request):
-    filename = filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("all files","*.*"),("Markdown file" ,"*.md")))
+    filename = filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("Markdown file" ,"*.md"),("all files","*.*")))
     
     sizeFile= os.path.getsize(filename)
     
@@ -24,5 +24,5 @@ def convertFileMdToHtml(request):
                     
         print("Fichier converti avec succès !")
     
-    return HttpResponse("""<html> <script> window.location.replace('/');</script> </html>""")
+    return HttpResponse("""<html> <script> window.location.replace('/convert/');</script> </html>""")
     
