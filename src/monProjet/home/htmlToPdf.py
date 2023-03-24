@@ -23,4 +23,4 @@ def convertFileHtmlToPdf(request):
         #message de confirmation
         print("Fichier converti avec succès !")
         
-    return HttpResponse("""<html> <script> window.location.replace('/convert/');</script> </html>""")
+    return HttpResponse("""<html> <script> alert("Fichier converti");window.location.replace('/convert/');</script> </html>""")
