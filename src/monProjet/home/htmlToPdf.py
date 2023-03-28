@@ -6,7 +6,7 @@ from pyhtml2pdf import converter
 #Fonction qui prend le fichier html et le convertit en pdf
 #Faudra changer la fonction
 def convertFileHtmlToPdf(request):
-    filename = filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("all files","*.*"),("Html files" ,"*.html")))
+    filename = filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("Html files" ,"*.html"),("all files","*.*")))
     
     #Récupère la taille du fichier
     sizeFile= os.path.getsize(filename)
@@ -23,4 +23,4 @@ def convertFileHtmlToPdf(request):
         #message de confirmation
         print("Fichier converti avec succès !")
         
-    return HttpResponse("""<html> <script> window.location.replace('/');</script> </html>""")
+    return HttpResponse("""<html> <script> alert("Fichier converti");window.location.replace('/convert/');</script> </html>""")

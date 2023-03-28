@@ -6,7 +6,7 @@ from pygame import *
 
 #Fonction qui convertit le fichier mp4 en mp3
 def convertMp4ToMp3(request):
-    filename = filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("all files","*.*"),("mp4 files" ,"*.mp4")))
+    filename = filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("mp4 files" ,"*.mp4"),("all files","*.*")))
     
     sizeFile = os.path.getsize(filename)
     
@@ -24,6 +24,6 @@ def convertMp4ToMp3(request):
         
         print("Fichier converti avec succès !")
         
-    return HttpResponse("""<html> <script> window.location.replace('/');</script> </html>""")
+    return HttpResponse("""<html> <script> alert("Fichier converti");window.location.replace('/convert/');</script> </html>""")
     
     

@@ -6,7 +6,15 @@
     
         <!-- remove this if you use Modernizr -->
         <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
-        
+        <script>
+            //ajouter le fichier drop dans files[] de la balise input
+            /*function getFichierDrop(event){
+                event.preventDefault();
+                var files = event.dataTransfer.files;
+                var input = document.getElementById("file");
+                input.files = files;
+            }*/           
+        </script>
     </head>
 <body>
     <div class="container" role="main">
