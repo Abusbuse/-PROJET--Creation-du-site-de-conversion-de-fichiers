@@ -15,11 +15,9 @@ body{
 header{
     background-color: var(--header-Background);
     width: 100%;
-
     display: flex;
     align-items: center;
     z-index: 100;
-
     position: fixed;
     top: 0;
 }
@@ -27,17 +25,16 @@ header{
 #nameDomaine {
     color: white;
 
-    margin-left: 50px;
+    margin-left: 2vh;
     margin-right: 50px;
 
     font-weight: 700;
     text-align: center;
-    font-size: 40px;
+    font-size: 38px;
     font-family: Hack, sans-serif;
     text-transform: uppercase;
     background: linear-gradient(90deg, #e6b24b, #ffffff, #e6b24b);
-    letter-spacing: 4px;
-    -webkit-background-clip: text;
+    letter-spacing: 2px;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     background-repeat: repeat;
@@ -45,7 +42,6 @@ header{
     animation: shine 5s linear infinite;
     position: relative;
 }
-
 @keyframes shine {
     0% {
         background-position-x: -500%;
@@ -55,18 +51,34 @@ header{
     }
 }
 
+@media screen and (max-width: 850px) {
+    #nameDomaine {
+        font-size: 33px;
+    }
+    #itemSpe {
+        font-size: 10px;
+        padding: 2px;
+    }
+}
+
 header a{
     text-decoration: none;
-    margin-left: 90px;
+    margin-right: 40px;
 }
 
 #upper{
     color: white;
-    margin-right: 25px;
-    font-size: 17px;
 }
-#upper:hover {
-    font-size: 20px;
+
+#itemSpe{
+    text-decoration: none;
+    color: black;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 15px;
 }
 
 main{
@@ -103,10 +115,7 @@ main a {
     font-weight: bold;
     margin-right: 20px;
 }
-#lien{
-    margin-left: 200px;
-    margin-right: 100px;
-}
+
 #underL {
     text-decoration: none;
     position: relative;
@@ -128,12 +137,15 @@ main a {
 }
 
 .encadrementConvert{
+    column-count: 3;
+    columns: 3;
     width: auto;
     height: auto;
     border: 5px solid black;
     border-radius: 50px;
     box-shadow: 0 0 10px #e6b24b;
     margin: 0 auto;
+    padding: 2vh;
     display: block;
     background-color: #A5A5A5;
 }
@@ -180,7 +192,6 @@ main a {
     text-indent: 0;
 
 }
-/*quand la souris passe sur le bouton*/
 .btn:hover{
     background-color: #e6b24b;
     color: black;
@@ -201,16 +212,22 @@ footer{
 
 #liItem{
     list-style-type: none;
-    margin-left: 675px;
+    margin-left: auto;
     padding-top: 10px;
+    display: inline;
+    column-count: 3;
+    column-width: auto;
 }
 
 #footitem{
     text-decoration: none;
+    color: white;
+    margin-right:40px;
 }
 
 footer p{
     text-align: left;
-    margin-top: 200px;
+    margin-top: auto;
     margin-right: 700px;
+    position: relative;
 }

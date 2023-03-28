@@ -17,25 +17,31 @@
     
             <div class="menu">
                 <a href="{% url 'Accueil' %}"><span id="upper">Accueil</span></a>
-                <a href="{% url 'convert' %}"><span id="upper">Convertir</span></a>
-                <a href="{% url 'contact' %}"><span id="upper">A propos</span></a>
-                <a href="{% url 'aPropos' %}"><span id="upper">Contact</span></a>
+                <a href="{% url 'convert' %}"><span id="itemSpe">Convertir</span></a>
+                <a href="{% url 'aPropos' %}"><span id="upper">A propos</span></a>
+                <a href="{% url 'contact' %}"><span id="upper">Contact</span></a>
             </div>
         </header>
 
         <main>
             <h2>Voici la page où vous pouvez retrouver tous les types de conversions disponibles: </h2>
             <div class="encadrementConvert">
-                <a id="lien" href="{% url 'htp' %}"><span id="underL">Html → Pdf</span></a>
-                <a id="lien" href="{% url 'dtp' %}"><span id="underL">Docx → Pdf</span></a>
-                <a id="lien" href="{% url 'm4tm3' %}"><span id="underL">MP4 → MP3</span></a>
-                <a id="lien" href="{% url 'mdToPdf' %}"><span id="underL">Markdown → Pdf</span></a>
-                <a id="lien" href="{% url 'mdToHtml' %}"><span id="underL">Markdown → Html</span></a>
+                <a id="lien" href="{% url 'htp' %}"><span id="underL">Html→Pdf<br></span></a>
+                <a id="lien" href="{% url 'dtp' %}"><span id="underL">Docx→Pdf<br></span></a>
+                <a id="lien" href="{% url 'm4tm3' %}"><span id="underL">MP4→MP3<br></span></a>
+                <a id="lien" href="{% url 'mdToPdf' %}"><span id="underL">Markdown→Pdf<br></span></a>
+                <a id="lien" href="{% url 'mdToHtml' %}"><span id="underL">Markdown→Html<br></span></a>
             </div>
         </main>
 
         <footer>
-            <p>Voici le pied de page</p>
+            <ul>
+                <li id="liItem"><a id="footitem" href="{%url 'Accueil'%}">Accueil</a>
+                <li id="liItem"><a id="footitem" href="{%url 'contact'%}">Contact</a>
+                <li id="liItem"><a id="footitem" href="{%url 'aPropos'%}">A propos<br></a>
+            </ul>
+            
+            <p><br>© 2023 ConvertisseurFile</p>        
         </footer>
     </body>
 </html>
