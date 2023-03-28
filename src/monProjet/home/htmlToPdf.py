@@ -2,25 +2,30 @@ from django.http import HttpResponse
 import os
 from tkinter import  filedialog
 from pyhtml2pdf import converter
+from tkinter import *
 
 #Fonction qui prend le fichier html et le convertit en pdf
 #Faudra changer la fonction
 def convertFileHtmlToPdf(request):
-    filename = filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("Html files" ,"*.html"),("all files","*.*")))
-    
-    #Récupère la taille du fichier
-    sizeFile= os.path.getsize(filename)
-    
+    root=Tk()
+    root.withdraw()
+    root.lift()
+    root.attributes('-topmost',True)
+    filename = filedialog.askopenfilename(parent=root, initialdir = "/",title = "Select file",filetypes = (("Html files" ,"*.html"),("all files","*.*")))
+    root.destroy()
+    #si l'utilisateur ne sélectionne pas de fichier
     if filename == "":
         print("Aucun fichier sélectionné")
-    #Si le fichier est supérieur à 10Mo, on ne le convertit pas
-    if sizeFile > 10000000:
-        print("Fichier trop volumineux")
+        alert ="('Aucun fichier sélectionné');"
     else:
-        #convertit le fichier html en pdf
-        converter.convert(filename, os.path.expanduser("~/Downloads/")+"FichierConverti.pdf")
-
-        #message de confirmation
-        print("Fichier converti avec succès !")
-        
-    return HttpResponse("""<html> <script> alert("Fichier converti");window.location.replace('/convert/');</script> </html>""")
+        #Récupère la taille du fichier
+        sizeFile= os.path.getsize(filename)
+        if sizeFile > 10000000:
+            print("Fichier trop volumineux")
+            alert ="('Fichier trop volumineux');"  
+        else:
+            #télécharge le fichier converti dans le dossier de téléchargement du pc de l'utilisateur
+            converter.convert(filename, os.path.expanduser("~/Downloads/"))
+            print("Fichier converti avec succès !")
+            alert ="('Fichier converti');"
+    return HttpResponse("""<html> <script> alert"""+ alert + """window.location.replace('/convert/');</script> </html>""")

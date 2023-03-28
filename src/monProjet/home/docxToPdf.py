@@ -18,18 +18,18 @@ def convertFileDocxToPdf(request):
     if filename == "":
         print("Aucun fichier sélectionné")
         alert ="('Aucun fichier sélectionné');"
+    #Si l'utilisateur sélectionne un fichier
     else:
         #Récupère la taille du fichier
         sizeFile= os.path.getsize(filename)
+        #si le fichier est trop volumineux
         if sizeFile > 10000000:
             print("Fichier trop volumineux")
             alert ="('Fichier trop volumineux');"
-            
+        #Si tout est bon
         else:
             #télécharge le fichier converti dans le dossier de téléchargement du pc de l'utilisateur
             convert(filename, os.path.expanduser("~/Downloads/"))
-            
             print("Fichier converti avec succès !")
             alert ="('Fichier converti');"
-
     return HttpResponse("""<html> <script> alert"""+ alert + """window.location.replace('/convert/');</script> </html>""")
