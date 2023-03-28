@@ -25,7 +25,7 @@ def convertFileHtmlToPdf(request):
             alert ="('Fichier trop volumineux');"  
         else:
             #télécharge le fichier converti dans le dossier de téléchargement du pc de l'utilisateur
-            converter.convert(filename, os.path.expanduser("~/Downloads/"))
+            converter.convert(filename, os.path.expanduser("~/Downloads/")+"FichierConverti.pdf")
             print("Fichier converti avec succès !")
             alert ="('Fichier converti');"
     return HttpResponse("""<html> <script> alert"""+ alert + """window.location.replace('/convert/');</script> </html>""")
