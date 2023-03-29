@@ -5,11 +5,13 @@
 html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 body{
     min-width: 100%;
     min-height: 100%;
+    position: relative;
 }
 
 header{
@@ -20,6 +22,7 @@ header{
     z-index: 100;
     position: fixed;
     top: 0;
+
 }
 
 #nameDomaine {
@@ -87,7 +90,7 @@ main{
     margin-bottom: 50px;
     margin-top: 125px;
     min-height: 69.2vh;
-
+    position: relative;
     font-size: larger;
 }
 
@@ -95,6 +98,8 @@ main h1{
     color: black;
     font-size: 50px;
     font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
 }
 
 main h2{
@@ -114,6 +119,73 @@ main a {
     font-size: 25px;
     font-weight: bold;
     margin-right: 20px;
+}
+
+.form-style {
+    margin:10px auto;
+    width: 400px;
+    padding: 20px 12px 10px 20px;
+    font: 14px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.form-style td {
+    padding: 0;
+    display: block;
+    list-style: none;
+    margin: 10px 0 0 0;
+}
+.form-style label{
+    margin:0 0 3px 0;
+    padding:0px;
+    display:block;
+    font-weight: bold;
+}
+.form-style .required{
+    color:red;
+}
+.form-style input[type=submit], .form-style input[type=reset]{
+    background: #4eb5f1;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: #fff;
+}
+.form-style input[type=submit]:hover, .form-style input[type=reset]:hover{
+    background: #4eb5f1;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+}
+.form-style .field-textarea{
+    height: 100px;
+}
+.form-style input[type=text], 
+.form-style input[type=email],
+textarea{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border:1px solid #BEBEBE;
+    padding: 7px;
+    margin:0px;
+    transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;  
+}
+.form-style .long{
+    width: 100%;
+}
+.form-style input[type=text]:focus, 
+.form-style input[type=email]:focus,
+.form-style textarea:focus{
+    -moz-box-shadow: 0 0 8px #88D5E9;
+    -webkit-box-shadow: 0 0 8px #88D5E9;
+    box-shadow: 0 0 8px #88D5E9;
+    border: 1px solid #88D5E9;
+}
+.error{
+    color: #D8000C;
+    background-color: #FFBABA;
 }
 
 #underL {
@@ -200,34 +272,33 @@ main a {
 footer{
     background-color: var(--header-Background);
     width: 100%;
-
+    height: 100px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-
+    position: absolute;
     bottom: 0;
-
     color: white;
 }
 
 #liItem{
     list-style-type: none;
     margin-left: auto;
-    padding-top: 10px;
     display: inline;
     column-count: 3;
     column-width: auto;
+    vertical-align: middle;
 }
 
 #footitem{
     text-decoration: none;
     color: white;
     margin-right:40px;
+    vertical-align: middle;
 }
 
 footer p{
     text-align: left;
-    margin-top: auto;
-    margin-right: 700px;
+    margin: auto;
+    vertical-align: middle;
     position: relative;
 }
