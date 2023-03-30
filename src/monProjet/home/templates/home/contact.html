@@ -25,8 +25,9 @@
         </header>
 
         <main>
-            <h1>Formulaire de contact</h1>
-            <form name="myForm" onsubmit="return validateForm()" method="post">
+            <h1>Contactez-nous !</h1>
+            <form name="myForm" onsubmit="return validateForm()" method="POST">
+                {% csrf_token%}
                 <table class="form-style">
                     <tr>
                     <td>
