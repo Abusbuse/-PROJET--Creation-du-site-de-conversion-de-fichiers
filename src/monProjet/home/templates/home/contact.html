@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="text/javascript" href="{%static 'js/validateForm.js'%}">
+        <script src="{% static 'js/formulaire.js' %}"></script>   
         <link rel="stylesheet" href="{%static 'css/Main.css'%}">
         <link rel="shortcut icon" href="{%static 'image/logo.png'%}" type="image/x-icon">
         <title>Conversion</title>
@@ -26,51 +26,54 @@
 
         <main>
             <h1>Contactez-nous !</h1>
-            <form name="myForm" onsubmit="return validateForm()" method="POST">
-                {% csrf_token%}
-                <table class="form-style">
-                    <tr>
-                    <td>
+            <form name="myForm" action="{%url 'contact' %}" onsubmit="return validateForm()" method="POST">
+               {%csrf_token%}
+               <table class="form-style">
+                  <tr>
+                     <td>
                         <label>
-                            Votre nom <span class="required">*</span>
+                           Votre nom <span class="required">*</span>
                         </label>
-                    </td>
-                    <td>
+                     </td>
+                     <td>
                         <input type="text" name="name" class="long"/>
                         <span class="error" id="errorname"></span>
-                    </td>
-                    </tr>
-                    <tr>
-                    <td>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
                         <label>
-                            Votre adresse e-mail <span class="required">*</span>
+                           Votre adresse e-mail <span class="required">*</span>
                         </label>
-                    </td>
-                    <td>
+                     </td>
+                     <td>
                         <input type="email" name="email" class="long"/>
                         <span class="error" id="erroremail"></span>
-                    </td>
-                    </tr>
-                    <tr>
-                    <td>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
                         <label>
-                            Message <span class="required">*</span>
+                           Message <span class="required">*</span>
                         </label>
-                    </td>
-                    <td>
+                     </td>
+                     <td>
                         <textarea name="message" class="long field-textarea"></textarea>
                         <span class="error" id="errormsg"></span>
-                    </td>
-                    </tr>
-                    <tr>
-                    <td></td>
-                    <td>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td></td>
+                     
+                     <td>
+                        <p>Champs obligatoires<span class="required">*</span></p>
                         <input type="submit" value="Envoyer">      
                         <input type="reset" value="Réinitialiser"> 
-                    </td>
-                    </tr>
-                </table>
+                     </td>
+                  </tr>
+               </table>
             </form>
+            
         </main>
 
         <footer>

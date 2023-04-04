@@ -5,6 +5,7 @@ from . import docxToPdf
 from . import mp4ToMp3
 from . import mdToPdf
 from . import mdToHtml
+from .views import contact
 
 urlpatterns = [
     #Chemin vers la page d'accueil
@@ -15,6 +16,7 @@ urlpatterns = [
     
     #Cehmin vers les autres pages
     path('contact/', views.contact, name='contact'),
+    path('contact_success/', views.contact_success, name='contact_success'),
     path('aPropos/', views.aPropos, name='aPropos'),
 
     

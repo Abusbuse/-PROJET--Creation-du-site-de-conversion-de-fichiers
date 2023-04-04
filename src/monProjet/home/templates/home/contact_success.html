@@ -1,0 +1,41 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{%static 'css/Main.css'%}">
+        <link rel="shortcut icon" href="{%static 'image/logo.png'%}" type="image/x-icon">
+        <title>Conversion</title>
+    </head>
+    <body>
+        <header>
+            <img src="{% static 'image/logo.png'%}" alt="logo" width="100" height="100">
+            <h1 id="nameDomaine">ConvertisseurFile</h1>     
+    
+            <div class="menu">
+                <a href="{% url 'Accueil' %}"><span id="upper">Accueil</span></a>
+                <a href="{% url 'convert' %}"><span id="upper">Convertir</span></a>
+                <a href="{% url 'aPropos' %}"><span id="upper">A propos</span></a>
+                <a href="{% url 'contact' %}"><span id="itemSpe">Contact</span></a>
+            </div>
+        </header>
+
+        <main>
+            <h1>Votre message a bien été envoyé</h1>
+            <p id="parasucc">Nous vous répondrons dans les plus brefs délais</p>
+        </main>
+
+        <footer>
+            <ul>
+                <li id="liItem"><a id="footitem" href="{%url 'Accueil'%}">Accueil</a>
+                <li id="liItem"><a id="footitem" href="{%url 'contact'%}">Contact</a>
+                <li id="liItem"><a id="footitem" href="{%url 'aPropos'%}">A propos<br></a>
+            </ul>
+            
+            <p><br>© 2023 ConvertisseurFile</p>
+        </footer>
+    </body>
+</html>
