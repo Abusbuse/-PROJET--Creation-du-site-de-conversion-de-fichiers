@@ -5,6 +5,9 @@ from . import docxToPdf
 from . import mp4ToMp3
 from . import mdToPdf
 from . import mdToHtml
+from . import pngToJpg
+from . import testpy
+from . import jpgToPng
 from .views import contact
 
 urlpatterns = [
@@ -18,6 +21,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('contact_success/', views.contact_success, name='contact_success'),
     path('aPropos/', views.aPropos, name='aPropos'),
+    path('test/', views.test, name='test'),
 
     
     #Chemin vers les pages de conversion 
@@ -27,6 +31,8 @@ urlpatterns = [
     path('mdToPdf/', views.mdToPdf, name='mdToPdf'),
     path('mdToHtml/', views.mdToHtml, name='mdToHtml'),
     path('dragAndDrop/', views.dragAndDrop, name='dragAndDrop'),
+    path('pngToJpg/', views.pngToJpg, name='pngToJpg'),
+    path('jpgToPng/', views.jpgToPng, name='jpgToPng'),
     
     #Chemin vers les fonctions de conversion
     path('convertFileHtmlToPdf/', htmlToPdf.convertFileHtmlToPdf),
@@ -34,4 +40,7 @@ urlpatterns = [
     path('convertMp4ToMp3/', mp4ToMp3.convertMp4ToMp3),
     path('convertFileMdToPdf/', mdToPdf.convertFileMdToPdf),
     path('convertFileMdToHtml/', mdToHtml.convertFileMdToHtml),
+    path('convertFilePngToJpg/', pngToJpg.convertFilePngToJpg),
+    path('convertFileJpgToPng/', jpgToPng.convertFileJpgToPng),
+    path('upload_file/', testpy.upload_file)
 ]

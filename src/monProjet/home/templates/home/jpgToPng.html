@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{%static 'css/Main.css'%}">
         <link rel="shortcut icon" href="{%static 'image/logo.png'%}" type="image/x-icon">
-        <title>Conversion</title>
+        <title>JPEG To PNG</title>
     </head>
     <body>
         <header>
@@ -24,15 +24,12 @@
         </header>
 
         <main>
-            <h2>Voici la page où vous pouvez retrouver tous les types de conversions disponibles: </h2>
-            <div class="encadrementConvert">
-                <a id="lien" href="{% url 'htp' %}"><span id="underL">Html→Pdf<br></span></a>
-                <a id="lien" href="{% url 'dtp' %}"><span id="underL">Docx→Pdf<br></span></a>
-                <a id="lien" href="{% url 'm4tm3' %}"><span id="underL">MP4→MP3<br></span></a>
-                <a id="lien" href="{% url 'mdToPdf' %}"><span id="underL">Markdown→Pdf<br></span></a>
-                <a id="lien" href="{% url 'mdToHtml' %}"><span id="underL">Markdown→Html<br></span></a>
-                <a id="lien" href="{% url 'pngToJpg' %}"><span id="underL">PNG→JPEG<br></span></a>
-                <a id="lien" href="{% url 'jpgToPng' %}"><span id="underL">JPEG→PNG<br></span></a>
+            <h1 id="frameConv">Convertir un fichier JPEG en PNG</h1>
+            <div class="encadrement">
+                <p>Choisissez un fichier JPEG à convertir en PNG</p>
+                <form action="/convertFileJpgToPng">    
+                    <button id="stat-btn" class="btn">convert</button>
+                </form>
             </div>
         </main>
 
@@ -44,6 +41,6 @@
             </ul>
             
             <p><br>© 2023 ConvertisseurFile</p>        
-        </footer>
+        </footer>   
     </body>
 </html>

@@ -19,6 +19,9 @@ def contact_success(request):
 def aPropos(request):
     return render(request, 'home/aPropos.html')
 
+def test(request):
+    return render(request, 'home/test.html')
+
 def htp(request):
     return render(request, 'home/htp.html')
 
@@ -36,6 +39,12 @@ def mdToHtml(request):
 
 def dragAndDrop(request):
     return render(request, 'home/dragAndDrop.html')
+
+def pngToJpg(request):
+    return render(request, 'home/pngToJpg.html')
+
+def jpgToPng(request):
+    return render(request, 'home/jpgToPng.html')
 
 def contact(request):
     if request.method == 'POST':
