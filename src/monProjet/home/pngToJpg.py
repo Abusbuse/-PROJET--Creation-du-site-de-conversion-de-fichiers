@@ -19,7 +19,7 @@ def convertFilePngToJpg(request):
         print("Aucun fichier sélectionné")
         alert ="('Aucun fichier sélectionné');"
     #Si l'utilisateur sélectionne un fichier
-    elif filename[-3:] == "png":
+    elif filename[-3:] == "PNG" or filename[-3:] == "png":
         #Récupère la taille du fichier
         sizeFile= os.path.getsize(filename)
         #si le fichier est trop volumineux
