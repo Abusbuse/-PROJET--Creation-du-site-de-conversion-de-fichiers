@@ -16,7 +16,7 @@ def convertFileMdToPdf(request):
     if filename == "":
         print("Aucun fichier sélectionné")
         alert ="('Aucun fichier sélectionné');"
-    else:
+    elif filename[-2:] == "md":
         #Récupère la taille du fichier
         sizeFile= os.path.getsize(filename)
         if sizeFile > 10000000:
@@ -32,5 +32,8 @@ def convertFileMdToPdf(request):
                 pdf.drawString(50, 800-15*i, text[i])
             pdf.save()           
             print("Fichier converti avec succès !")
-            alert ="('Fichier converti');"       
+            alert ="('Fichier converti');"
+    else:
+        print("Fichier non pris en charge")
+        alert ="('Fichier non pris en charge');"      
     return HttpResponse("""<html> <script> alert"""+ alert + """window.location.replace('/convert/');</script> </html>""")

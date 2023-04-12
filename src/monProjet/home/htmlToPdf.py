@@ -17,7 +17,7 @@ def convertFileHtmlToPdf(request):
     if filename == "":
         print("Aucun fichier sélectionné")
         alert ="('Aucun fichier sélectionné');"
-    else:
+    elif filename[-4:] == "html":
         #Récupère la taille du fichier
         sizeFile= os.path.getsize(filename)
         if sizeFile > 10000000:
@@ -28,4 +28,7 @@ def convertFileHtmlToPdf(request):
             converter.convert(filename, os.path.expanduser("~/Downloads/")+"FichierConverti.pdf")
             print("Fichier converti avec succès !")
             alert ="('Fichier converti');"
+    else:
+        print("Fichier non pris en charge")
+        alert ="('Fichier non pris en charge');"
     return HttpResponse("""<html> <script> alert"""+ alert + """window.location.replace('/convert/');</script> </html>""")

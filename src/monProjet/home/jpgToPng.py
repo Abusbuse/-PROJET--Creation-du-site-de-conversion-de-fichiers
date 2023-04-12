@@ -19,7 +19,7 @@ def convertFileJpgToPng(request):
         print("Aucun fichier sélectionné")
         alert ="('Aucun fichier sélectionné');"
     #Si l'utilisateur sélectionne un fichier
-    else:
+    elif filename[-3:] == "jpg":
         #Récupère la taille du fichier
         sizeFile= os.path.getsize(filename)
         #si le fichier est trop volumineux
@@ -34,4 +34,7 @@ def convertFileJpgToPng(request):
             im.save(os.path.expanduser("~/Downloads/Image.png"), 'png')
             print("Fichier converti avec succès !")
             alert ="('Fichier converti');"
+    else:
+        print("Fichier non pris en charge")
+        alert ="('Fichier non pris en charge');"
     return HttpResponse("""<html> <script> alert"""+ alert + """window.location.replace('/convert/');</script> </html>""")
